@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script>
+       var xmlhttp;
+       function getNum()
+       {
+         xmlhttp = new XMLHttpRequest();
+         xmlhttp.onreadystatechange = callback;
+        function changeContent()
+        {
+            var theDiv=document.getElementById("content");
+            theDiv.innerHTML="Soon it will be summer!! happy";
+        }
+        // when information comes back from the server
+        function callback(){
+            if(xmlhttp.readyState==4 && xmlhttp.status=200)
+            {
+                document.getElementByid('result').innerHTML = xmlhttp.responseText;
+
+            }
+        }
+    </script>
+</head>
+
+    <body>
+       <div id="result">
+            <input type="button" value="Get Random Number" onclick="getNum()"/>
+       </div>
+        <div id='content'>
+            <p>Happy first day of spring!!!</p>     
+        </div>
+        <input type="button" value="Change Content" onclick="changeContent()"/>
+    </body>
+
+</html>
